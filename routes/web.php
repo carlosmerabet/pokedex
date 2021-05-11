@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*
 Route::get('/', function () {
+    #return "Hello World com Laravel";
     return view('welcome');
 });
+*/
+
+Route::get('/', [HomeController::class,'index']);
+Route::get('detalhe/{id}', [HomeController::class,'show']);
+
+
